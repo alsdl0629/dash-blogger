@@ -27,20 +27,27 @@ repositories {
 extra["snippetsDir"] = file("build/generated-snippets")
 
 dependencies {
+    // kotlin
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    // presentation
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // persistence
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.flywaydb:flyway-core")
     implementation("org.flywaydb:flyway-mysql")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
     runtimeOnly("com.h2database:h2")
     runtimeOnly("com.mysql:mysql-connector-j")
+
+    // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
-    testImplementation("io.kotest:kotest-runner-junit5")
-    testImplementation("io.kotest:kotest-assertions-core")
-    testImplementation("it.ozimov:embedded-redis")
+    testImplementation("io.kotest.extensions:kotest-extensions-spring:${property("kotestExtensionsSpringVersion")}")
+    testImplementation("io.kotest:kotest-runner-junit5:${property("kotestVersion")}")
+    testImplementation("io.kotest:kotest-assertions-core:${property("kotestVersion")}")
+    testImplementation("it.ozimov:embedded-redis:${property("embeddedRedisVersion")}")
 }
 
 tasks.withType<KotlinCompile> {

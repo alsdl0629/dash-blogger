@@ -9,3 +9,8 @@ spring:
         format_sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
     open-in-view: false
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
