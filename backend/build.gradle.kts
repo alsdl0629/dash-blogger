@@ -47,6 +47,7 @@ dependencies {
     testImplementation("io.kotest.extensions:kotest-extensions-spring:${property("kotestExtensionsSpringVersion")}")
     testImplementation("io.kotest:kotest-runner-junit5:${property("kotestVersion")}")
     testImplementation("io.kotest:kotest-assertions-core:${property("kotestVersion")}")
+    testImplementation("io.mockk:mockk:${property("mockkVersion")}")
     testImplementation("it.ozimov:embedded-redis:${property("embeddedRedisVersion")}")
 }
 
