@@ -76,3 +76,9 @@ allOpen {
     annotation("jakarta.persistence.Embeddable")
     annotation("jakarta.persistence.MappedSuperclass")
 }
+
+tasks.register<Copy>("installGitHooks") {
+    from(file("$rootDir/.githooks"))
+    into(file("$rootDir/.git/hooks"))
+    fileMode = "0775".toInt()
+}
