@@ -80,7 +80,7 @@ allOpen {
 }
 
 tasks.register<Copy>("installGitHooks") {
-    from(file("$rootDir/.githooks"))
-    into(file("$rootDir/.git/hooks"))
+    from(file("../.githooks"))
+    into(file("../.git/hooks"))
     fileMode = "0775".toInt()
 }
