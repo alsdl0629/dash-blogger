@@ -48,6 +48,9 @@ dependencies {
     testImplementation("io.kotest:kotest-assertions-core:${property("kotestVersion")}")
     testImplementation("io.mockk:mockk:${property("mockkVersion")}")
     testImplementation("it.ozimov:embedded-redis:${property("embeddedRedisVersion")}")
+
+    // selenium
+    implementation("org.seleniumhq.selenium:selenium-java:${property("seleniumVersion")}")
 }
 
 tasks.withType<KotlinCompile> {
