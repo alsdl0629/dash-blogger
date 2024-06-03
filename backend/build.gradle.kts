@@ -37,7 +37,6 @@ dependencies {
     // persistence
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
-    implementation("org.flywaydb:flyway-mysql")
     runtimeOnly("com.h2database:h2")
     runtimeOnly("com.mysql:mysql-connector-j")
 
@@ -49,6 +48,9 @@ dependencies {
     testImplementation("io.kotest:kotest-assertions-core:${property("kotestVersion")}")
     testImplementation("io.mockk:mockk:${property("mockkVersion")}")
     testImplementation("it.ozimov:embedded-redis:${property("embeddedRedisVersion")}")
+
+    // selenium
+    implementation("org.seleniumhq.selenium:selenium-java:${property("seleniumVersion")}")
 }
 
 tasks.withType<KotlinCompile> {
@@ -78,7 +80,7 @@ allOpen {
 }
 
 tasks.register<Copy>("installGitHooks") {
-    from(file("$rootDir/.githooks"))
-    into(file("$rootDir/.git/hooks"))
+    from(file("../.githooks"))
+    into(file("../.git/hooks"))
     fileMode = "0775".toInt()
 }
