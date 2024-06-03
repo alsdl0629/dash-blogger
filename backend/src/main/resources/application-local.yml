@@ -4,14 +4,24 @@ spring:
       on-profile: local
 
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${DB_URL:localhost}:${DB_PORT:3306}/${DB_NAME:dash_blogger}?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:qaz}
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/dashblogger;MODE=MySQL
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
 
   jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    open-in-view: false
 
   data:
     redis:
