@@ -1,6 +1,6 @@
 package io.dash.blogger.core.controller.dto
 
-class PostingCount(
+data class PostingCount(
     val postingCount: Int
 ) {
     companion object {
