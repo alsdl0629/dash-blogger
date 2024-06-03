@@ -1,5 +1,6 @@
 package io.dash.blogger.core.controller
 
+import io.dash.blogger.core.controller.dto.GetAllPostingCountRankingResponse
 import io.dash.blogger.core.controller.dto.PostingCount
 import io.dash.blogger.core.domain.Blog
 import io.dash.blogger.core.domain.BlogPlatform.TISTORY
@@ -34,6 +35,10 @@ class BlogController(
             )
         )
     }
+
+    @GetMapping("/postingCount/rankings")
+    fun getPostingCountRanking(@RequestParam(required = false) top: Int = 10): GetAllPostingCountRankingResponse =
+        blogService.getPostingCountRanking(top)
 
     companion object {
         const val VELOG_CSS_SELECTOR =
