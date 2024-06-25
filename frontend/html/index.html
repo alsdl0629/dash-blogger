@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dash-Blogger</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="header">
+    <div>
+      <span style="font-size:xx-large">Dash Blogger</span>
+    </div>
+    <div>
+      <a href="#generate">
+        <span style="font-size:large">Generate</span>
+      </a>
+    </div>
+    <div>
+      <a href="#rank-box">
+        <span style="font-size:large">Ranking</span>
+      </a>
+    </div>
+    <div>
+      <a href="https://github.com/alsdl0629/dash-blogger">
+        <span style="font-size:large;">Github</span>
+      </a>
+    </div>
+  </div>
+
+  <div id = "generate">
+    <h1>Generate</h1>
+  </div>
+
+  <div class="select-blog-platform">
+    <form>
+      <label for="blog-platform">Select your blog platform</label>
+      <br>
+      <select id = "blog-platform">
+        <option value="VELOG">VELOG</option>
+        <option value="TISTORY">TISTORY</option>
+      </select>
+    </form>
+  </div>
+
+  <div class="input-blog-url">
+    <label>Blog URL</label>
+    <br>
+    <input id="targetUrl" type="url" placeholder="Write your blog url" required style="height: 22px; width: 300px;">
+    <br>
+    <label id = "css-selector-label", class="hidden">CSS Selector</label>
+    <br>
+    <input id = "cssSelector", class="hidden" type="text" placeholder="Write css selector">
+    <br>
+    <input id="input-button" type="submit" value="OK">
+  </div>
+
+  <div class="create-link">
+    <h4>MARKDOWN</h4>
+    <div id="markdown-link" class="link-box"></div>
+    <h4>HTML LINK</h4>
+    <div id="html-link" class="link-box"></div>
+    <h4>EMBED URL</h4>
+    <div id="embed-url-link" class="link-box"></div>
+  </div>
+
+  <div id="show-rank">
+    <h1>SHOW RANK</h1>
+    <h3>TOP 10</h3>
+    <div id="rank-box">
+    </div>
+  </div>
+  
+  <script src="/js/index.js"></script>
+  <script src="/js/put-tistory.js"></script>
+  <script src="/js/get-rank.js"></script>
+  <script src="/js/create-link.js"></script>
+</body>
+</html>
